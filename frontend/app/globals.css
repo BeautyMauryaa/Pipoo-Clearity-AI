@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Clarity AI - Custom Theme */
+@theme {
+  /* Colors */
+  --color-base-primary: #0f1117;
+  --color-base-secondary: #151a23;
+  --color-base-border: #1f2633;
+  
+  --color-text-primary: #e6eaf2;
+  --color-text-secondary: #9aa4b2;
+  --color-text-muted: #6b7280;
+  
+  --color-accent-blue: #4f7cff;
+  --color-accent-violet: #8b5cf6;
+  
+  --color-status-success: #22c55e;
+  --color-status-warning: #f59e0b;
+  --color-status-error: #ef4444;
+  
+  /* Fonts */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Global Styles */
+@layer base {
+  * {
+    border-color: var(--color-base-border);
+  }
+  
+  body {
+    background-color: var(--color-base-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-sans);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2633;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3441;
+}
