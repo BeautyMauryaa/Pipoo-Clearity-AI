@@ -1,0 +1,72 @@
+<SplashScreen>:
+    MDFloatLayout:
+        md_bg_color: app.colors['background']
+        
+        # Gradient effect
+        MDBoxLayout:
+            orientation: 'vertical'
+            md_bg_color: [0.11, 0.10, 0.29, 1]
+        
+        # Center content
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint: None, None
+            size: '300dp', '400dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            spacing: '40dp'
+            
+            # Logo Circle with glow effect
+            MDFloatLayout:
+                size_hint_y: None
+                height: '120dp'
+                
+                # Outer glow circle
+                MDIconButton:
+                    icon: "circle"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    theme_icon_color: "Custom"
+                    icon_color: [0.39, 0.40, 0.95, 0.2]  # Primary with opacity
+                    icon_size: "130sp"
+                    disabled: True
+                
+                # Main circle
+                MDIconButton:
+                    icon: "circle-outline"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    theme_icon_color: "Custom"
+                    icon_color: app.colors['primary']
+                    icon_size: "100sp"
+                    disabled: True
+            
+            # App Name
+            MDLabel:
+                text: "Pipoo"
+                font_size: '48sp'
+                bold: True
+                halign: 'center'
+                theme_text_color: 'Custom'
+                text_color: app.colors['text_primary']
+                size_hint_y: None
+                height: '60dp'
+            
+            # Tagline
+            MDLabel:
+                text: "AI Voice Desk"
+                font_size: '20sp'
+                halign: 'center'
+                theme_text_color: 'Custom'
+                text_color: app.colors['accent']
+                size_hint_y: None
+                height: '30dp'
+            
+            Widget:
+                size_hint_y: None
+                height: '40dp'
+            
+            # Loading Spinner
+            MDSpinner:
+                size_hint: None, None
+                size: '48dp', '48dp'
+                pos_hint: {'center_x': 0.5}
+                color: app.colors['primary']
+                active: True

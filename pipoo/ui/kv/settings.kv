@@ -1,0 +1,126 @@
+
+<SettingsScreen>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: app.colors['background']
+        
+        # Top Bar
+        MDTopAppBar:
+            title: "Settings"
+            md_bg_color: app.colors['surface']
+            specific_text_color: app.colors['text_primary']
+            left_action_items: [["arrow-left", lambda x: root.go_back()]]
+            elevation: 0
+        
+        # Settings List
+        ScrollView:
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: '15dp'
+                spacing: '15dp'
+                size_hint_y: None
+                height: self.minimum_height
+                
+                # Account Section
+                MDLabel:
+                    text: "Account"
+                    font_size: '14sp'
+                    bold: True
+                    theme_text_color: 'Custom'
+                    text_color: app.colors['text_secondary']
+                    size_hint_y: None
+                    height: '30dp'
+                
+                MDCard:
+                    orientation: 'vertical'
+                    padding: '20dp'
+                    md_bg_color: app.colors['surface']
+                    elevation: 1
+                    radius: [15]
+                    size_hint_y: None
+                    height: '60dp'
+                    
+                    MDLabel:
+                        id: username_display
+                        text: "Logged in as: User"
+                        theme_text_color: 'Custom'
+                        text_color: app.colors['text_primary']
+                
+                # Voice Section
+                MDLabel:
+                    text: "Voice Settings"
+                    font_size: '14sp'
+                    bold: True
+                    theme_text_color: 'Custom'
+                    text_color: app.colors['text_secondary']
+                    size_hint_y: None
+                    height: '30dp'
+                
+                MDCard:
+                    orientation: 'vertical'
+                    padding: '20dp'
+                    spacing: '10dp'
+                    md_bg_color: app.colors['surface']
+                    elevation: 1
+                    radius: [15]
+                    size_hint_y: None
+                    height: '80dp'
+                    
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        
+                        MDLabel:
+                            text: "Voice Speed"
+                            theme_text_color: 'Custom'
+                            text_color: app.colors['text_primary']
+                        
+                        MDLabel:
+                            text: "Normal"
+                            theme_text_color: 'Custom'
+                            text_color: app.colors['text_secondary']
+                            halign: 'right'
+                
+                # App Section
+                MDLabel:
+                    text: "App"
+                    font_size: '14sp'
+                    bold: True
+                    theme_text_color: 'Custom'
+                    text_color: app.colors['text_secondary']
+                    size_hint_y: None
+                    height: '30dp'
+                
+                MDCard:
+                    orientation: 'vertical'
+                    padding: '0dp'
+                    md_bg_color: app.colors['surface']
+                    elevation: 1
+                    radius: [15]
+                    size_hint_y: None
+                    height: '180dp'
+                    
+                    MDFlatButton:
+                        text: "About"
+                        size_hint_y: None
+                        height: '60dp'
+                        theme_text_color: 'Custom'
+                        text_color: app.colors['text_primary']
+                    
+                    MDSeparator:
+                    
+                    MDFlatButton:
+                        text: "Privacy Policy"
+                        size_hint_y: None
+                        height: '60dp'
+                        theme_text_color: 'Custom'
+                        text_color: app.colors['text_primary']
+                    
+                    MDSeparator:
+                    
+                    MDFlatButton:
+                        text: "Logout"
+                        size_hint_y: None
+                        height: '60dp'
+                        theme_text_color: 'Custom'
+                        text_color: app.colors['error']
+                        on_release: root.logout()

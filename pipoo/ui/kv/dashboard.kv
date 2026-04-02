@@ -1,0 +1,267 @@
+<DashboardScreen>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: app.colors['background']
+        
+        # Modern Top Bar
+        MDTopAppBar:
+            title: "Dashboard"
+            md_bg_color: app.colors['surface']
+            specific_text_color: app.colors['text_primary']
+            right_action_items: [["newspaper-variant-outline", lambda x: root.show_daily_briefing()], ["cog-outline", lambda x: root.goto_settings()]]
+            elevation: 4
+            radius: [0, 0, 20, 20]
+        
+        # Main Content
+        ScrollView:
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: '25dp'
+                spacing: '25dp'
+                size_hint_y: None
+                height: self.minimum_height
+                
+                # Modern Greeting Card
+                MDCard:
+                    orientation: 'vertical'
+                    md_bg_color: app.colors['surface']
+                    padding: '30dp'
+                    spacing: '10dp'
+                    radius: [20]
+                    elevation: 6
+                    size_hint_y: None
+                    height: '140dp'
+                    
+                    MDLabel:
+                        text: "Hey Nova 👋"
+                        font_size: '32sp'
+                        bold: True
+                        theme_text_color: 'Custom'
+                        text_color: app.colors['text_primary']
+                        size_hint_y: None
+                        height: '45dp'
+                    
+                    MDLabel:
+                        text: "ready to work?"
+                        font_size: '20sp'
+                        theme_text_color: 'Custom'
+                        text_color: app.colors['accent']
+                        size_hint_y: None
+                        height: '30dp'
+                
+                # AI Insight Card
+                MDCard:
+                    orientation: 'vertical'
+                    md_bg_color: app.colors['surface']
+                    padding: '25dp'
+                    spacing: '15dp'
+                    radius: [20]
+                    elevation: 4
+                    size_hint_y: None
+                    height: '120dp'
+                    
+                    MDLabel:
+                        id: ai_summary
+                        text: "💡 AI insights loading..."
+                        font_size: '15sp'
+                        theme_text_color: 'Custom'
+                        text_color: app.colors['text_secondary']
+                        size_hint_y: None
+                        height: '80dp'
+                
+                # Quick Actions Grid
+                MDLabel:
+                    text: "Quick Actions"
+                    font_size: '18sp'
+                    bold: True
+                    theme_text_color: 'Custom'
+                    text_color: app.colors['text_primary']
+                    size_hint_y: None
+                    height: '30dp'
+                
+                MDGridLayout:
+                    cols: 3
+                    spacing: '15dp'
+                    size_hint_y: None
+                    height: '140dp'
+                    
+                    # Chat Card
+                    MDCard:
+                        orientation: 'vertical'
+                        padding: '20dp'
+                        spacing: '12dp'
+                        md_bg_color: app.colors['surface']
+                        elevation: 4
+                        radius: [20]
+                        ripple_behavior: True
+                        on_release: root.goto_chat()
+                        
+                        MDIcon:
+                            icon: "message-text-outline"
+                            halign: 'center'
+                            theme_text_color: 'Custom'
+                            text_color: app.colors['primary']
+                            font_size: '36sp'
+                        
+                        MDLabel:
+                            text: "Chat"
+                            halign: 'center'
+                            font_size: '15sp'
+                            bold: True
+                            theme_text_color: 'Custom'
+                            text_color: app.colors['text_primary']
+                    
+                    # Notes Card
+                    MDCard:
+                        orientation: 'vertical'
+                        padding: '20dp'
+                        spacing: '12dp'
+                        md_bg_color: app.colors['surface']
+                        elevation: 4
+                        radius: [20]
+                        ripple_behavior: True
+                        on_release: root.goto_notes()
+                        
+                        MDIcon:
+                            icon: "notebook-outline"
+                            halign: 'center'
+                            theme_text_color: 'Custom'
+                            text_color: app.colors['primary']
+                            font_size: '36sp'
+                        
+                        MDLabel:
+                            text: "Notes"
+                            halign: 'center'
+                            font_size: '15sp'
+                            bold: True
+                            theme_text_color: 'Custom'
+                            text_color: app.colors['text_primary']
+                    
+                    # Reminders Card
+                    MDCard:
+                        orientation: 'vertical'
+                        padding: '20dp'
+                        spacing: '12dp'
+                        md_bg_color: app.colors['surface']
+                        elevation: 4
+                        radius: [20]
+                        ripple_behavior: True
+                        on_release: root.goto_reminders()
+                        
+                        MDIcon:
+                            icon: "bell-outline"
+                            halign: 'center'
+                            theme_text_color: 'Custom'
+                            text_color: app.colors['primary']
+                            font_size: '36sp'
+                        
+                        MDLabel:
+                            text: "Reminders"
+                            halign: 'center'
+                            font_size: '15sp'
+                            bold: True
+                            theme_text_color: 'Custom'
+                            text_color: app.colors['text_primary']
+                
+                # Today's Summary Card
+                MDCard:
+                    orientation: 'vertical'
+                    padding: '25dp'
+                    spacing: '20dp'
+                    md_bg_color: app.colors['surface']
+                    elevation: 4
+                    radius: [20]
+                    size_hint_y: None
+                    height: '200dp'
+                    
+                    MDLabel:
+                        text: "Today's Summary"
+                        font_size: '20sp'
+                        bold: True
+                        theme_text_color: 'Custom'
+                        text_color: app.colors['text_primary']
+                        size_hint_y: None
+                        height: '30dp'
+                    
+                    MDGridLayout:
+                        cols: 3
+                        spacing: '15dp'
+                        size_hint_y: None
+                        height: '100dp'
+                        
+                        # Notes Count
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            spacing: '8dp'
+                            
+                            MDLabel:
+                                id: notes_count
+                                text: "0"
+                                font_size: '32sp'
+                                bold: True
+                                halign: 'center'
+                                theme_text_color: 'Custom'
+                                text_color: app.colors['primary']
+                            
+                            MDLabel:
+                                text: "Notes"
+                                font_size: '13sp'
+                                halign: 'center'
+                                theme_text_color: 'Custom'
+                                text_color: app.colors['text_secondary']
+                        
+                        # Reminders Count
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            spacing: '8dp'
+                            
+                            MDLabel:
+                                id: reminders_count
+                                text: "0"
+                                font_size: '32sp'
+                                bold: True
+                                halign: 'center'
+                                theme_text_color: 'Custom'
+                                text_color: app.colors['primary']
+                            
+                            MDLabel:
+                                text: "Reminders"
+                                font_size: '13sp'
+                                halign: 'center'
+                                theme_text_color: 'Custom'
+                                text_color: app.colors['text_secondary']
+                        
+                        # Chats Count
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            spacing: '8dp'
+                            
+                            MDLabel:
+                                id: chats_count
+                                text: "0"
+                                font_size: '32sp'
+                                bold: True
+                                halign: 'center'
+                                theme_text_color: 'Custom'
+                                text_color: app.colors['primary']
+                            
+                            MDLabel:
+                                text: "Chats"
+                                font_size: '13sp'
+                                halign: 'center'
+                                theme_text_color: 'Custom'
+                                text_color: app.colors['text_secondary']
+                
+                Widget:
+                    size_hint_y: None
+                    height: '80dp'
+        
+        # Modern Voice FAB
+        MDFloatingActionButton:
+            icon: "microphone"
+            md_bg_color: app.colors['primary']
+            text_color: app.colors['text_primary']
+            pos_hint: {'center_x': 0.5}
+            y: '25dp'
+            elevation: 8
+            on_release: root.start_voice_input()

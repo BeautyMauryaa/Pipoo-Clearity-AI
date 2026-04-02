@@ -1,0 +1,440 @@
+2025-12-14 19:09:32 - Pipoo - INFO - ==================================================
+2025-12-14 19:09:32 - Pipoo - INFO - Pipoo Application Starting...
+2025-12-14 19:09:32 - Pipoo - INFO - ==================================================
+2025-12-14 19:09:32 - Pipoo - INFO - Storage service initialized
+2025-12-14 19:09:32 - Pipoo - INFO - Auth service initialized
+2025-12-14 19:09:32 - Pipoo - INFO - State service initialized
+2025-12-14 19:09:32 - Pipoo - INFO - AI service initialized
+2025-12-14 19:09:35 - Pipoo - INFO - Voice service initialized (TTS: True, STT: True)
+2025-12-14 19:09:35 - Pipoo - INFO - Productivity service initialized
+2025-12-14 19:09:35 - Pipoo - INFO - Permissions handler initialized
+2025-12-14 19:09:35 - Pipoo - WARNING - Slow operation: service_init took 2.23s
+2025-12-14 19:09:35 - Pipoo - INFO - Services initialized in 2.23s
+2025-12-14 19:09:37 - Pipoo - INFO - Added 8 screens
+2025-12-14 19:09:37 - Pipoo - WARNING - Slow operation: app_startup took 4.22s
+2025-12-14 19:09:37 - Pipoo - INFO - App startup completed in 4.22s
+2025-12-14 19:09:37 - Pipoo - INFO - 🚀 Pipoo Application Started
+2025-12-14 19:09:37 - Pipoo - INFO - 📱 Current Screen: splash
+2025-12-14 19:09:37 - Pipoo - INFO - Memory: RSS=160.2MB, VMS=107.0MB
+2025-12-14 19:13:19 - Pipoo - INFO - ==================================================
+2025-12-14 19:13:19 - Pipoo - INFO - Pipoo Application Starting...
+2025-12-14 19:13:19 - Pipoo - INFO - ==================================================
+2025-12-14 19:13:19 - Pipoo - INFO - Storage service initialized
+2025-12-14 19:13:19 - Pipoo - INFO - Auth service initialized
+2025-12-14 19:13:19 - Pipoo - INFO - State service initialized
+2025-12-14 19:13:19 - Pipoo - INFO - AI service initialized
+2025-12-14 19:13:20 - Pipoo - INFO - Voice service initialized (TTS: True, STT: True)
+2025-12-14 19:13:20 - Pipoo - INFO - Productivity service initialized
+2025-12-14 19:13:20 - Pipoo - INFO - Permissions handler initialized
+2025-12-14 19:13:20 - Pipoo - WARNING - Slow operation: service_init took 1.29s
+2025-12-14 19:13:20 - Pipoo - INFO - Services initialized in 1.29s
+2025-12-14 19:13:21 - Pipoo - CRITICAL - Adding screens: Parser: File "<inline>", line 25:
+...
+     23:            blur_radius: root.elevation * 10
+     24:            border_radius:
+>>   25:                (root.radius if hasattr(self, "radius") else [0, 0, 0, 0])                 if root.shadow_radius == [0.0, 0.0, 0.0, 0.0] else                 root.shadow_radius
+     26:    canvas.after:
+     27:        PopMatrix
+...
+ValueError: 'border_radius' must have 4, got 0
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+Traceback (most recent call last):
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+ValueError: 'border_radius' must have 4, got 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\pipoo\core\app.py", line 206, in _add_screens
+    SignupScreen(),
+    ^^^^^^^^^^^^^^
+  File "F:\pipoo\ui\screens\auth.py", line 65, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\relativelayout.py", line 274, in __init__
+    super(RelativeLayout, self).__init__(**kw)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\floatlayout.py", line 65, in __init__
+    super(FloatLayout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\layout.py", line 76, in __init__
+    super(Layout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 366, in __init__
+    self.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 665, in _apply_rule
+    child.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 600, in _apply_rule
+    self._build_canvas(widget.canvas.before, widget,
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 933, in _build_canvas
+    raise BuilderException(
+kivy.lang.builder.BuilderException: Parser: File "<inline>", line 25:
+...
+     23:            blur_radius: root.elevation * 10
+     24:            border_radius:
+>>   25:                (root.radius if hasattr(self, "radius") else [0, 0, 0, 0])                 if root.shadow_radius == [0.0, 0.0, 0.0, 0.0] else                 root.shadow_radius
+     26:    canvas.after:
+     27:        PopMatrix
+...
+ValueError: 'border_radius' must have 4, got 0
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+
+2025-12-14 19:13:21 - Pipoo - CRITICAL - App initialization: 
+Traceback (most recent call last):
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+ValueError: 'border_radius' must have 4, got 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\pipoo\core\app.py", line 206, in _add_screens
+    SignupScreen(),
+    ^^^^^^^^^^^^^^
+  File "F:\pipoo\ui\screens\auth.py", line 65, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\relativelayout.py", line 274, in __init__
+    super(RelativeLayout, self).__init__(**kw)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\floatlayout.py", line 65, in __init__
+    super(FloatLayout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\layout.py", line 76, in __init__
+    super(Layout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 366, in __init__
+    self.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 665, in _apply_rule
+    child.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 600, in _apply_rule
+    self._build_canvas(widget.canvas.before, widget,
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 933, in _build_canvas
+    raise BuilderException(
+kivy.lang.builder.BuilderException: Parser: File "<inline>", line 25:
+...
+     23:            blur_radius: root.elevation * 10
+     24:            border_radius:
+>>   25:                (root.radius if hasattr(self, "radius") else [0, 0, 0, 0])                 if root.shadow_radius == [0.0, 0.0, 0.0, 0.0] else                 root.shadow_radius
+     26:    canvas.after:
+     27:        PopMatrix
+...
+ValueError: 'border_radius' must have 4, got 0
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\pipoo\core\app.py", line 107, in build
+    self._add_screens()
+  File "F:\pipoo\core\app.py", line 220, in _add_screens
+    self.error_handler.handle_error(e, "Adding screens", critical=True)
+  File "F:\pipoo\utils\error_handler.py", line 38, in handle_error
+    toast(user_msg)
+  File "F:\pipoo\venv\Lib\site-packages\kivymd\toast\kivytoast\kivytoast.py", line 154, in toast
+    Toast(duration=duration, _md_bg_color=background).toast(text)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\pipoo\venv\Lib\site-packages\kivymd\toast\kivytoast\kivytoast.py", line 84, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivymd\theming.py", line 1670, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivymd\uix\behaviors\motion_behavior.py", line 201, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\modalview.py", line 195, in __init__
+    super(ModalView, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\anchorlayout.py", line 68, in __init__
+    super(AnchorLayout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\layout.py", line 76, in __init__
+    super(Layout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 366, in __init__
+    self.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 563, in _apply_rule
+    assert rule not in self.rulectx
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-12-14 19:13:38 - Pipoo - INFO - ==================================================
+2025-12-14 19:13:38 - Pipoo - INFO - Pipoo Application Starting...
+2025-12-14 19:13:38 - Pipoo - INFO - ==================================================
+2025-12-14 19:13:38 - Pipoo - INFO - Storage service initialized
+2025-12-14 19:13:38 - Pipoo - INFO - Auth service initialized
+2025-12-14 19:13:38 - Pipoo - INFO - State service initialized
+2025-12-14 19:13:38 - Pipoo - INFO - AI service initialized
+2025-12-14 19:13:39 - Pipoo - INFO - Voice service initialized (TTS: True, STT: True)
+2025-12-14 19:13:39 - Pipoo - INFO - Productivity service initialized
+2025-12-14 19:13:39 - Pipoo - INFO - Permissions handler initialized
+2025-12-14 19:13:39 - Pipoo - INFO - Services initialized in 0.48s
+2025-12-14 19:13:39 - Pipoo - CRITICAL - Adding screens: Parser: File "<inline>", line 25:
+...
+     23:            blur_radius: root.elevation * 10
+     24:            border_radius:
+>>   25:                (root.radius if hasattr(self, "radius") else [0, 0, 0, 0])                 if root.shadow_radius == [0.0, 0.0, 0.0, 0.0] else                 root.shadow_radius
+     26:    canvas.after:
+     27:        PopMatrix
+...
+ValueError: 'border_radius' must have 4, got 0
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+Traceback (most recent call last):
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+ValueError: 'border_radius' must have 4, got 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\pipoo\core\app.py", line 206, in _add_screens
+    SignupScreen(),
+    ^^^^^^^^^^^^^^
+  File "F:\pipoo\ui\screens\auth.py", line 65, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\relativelayout.py", line 274, in __init__
+    super(RelativeLayout, self).__init__(**kw)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\floatlayout.py", line 65, in __init__
+    super(FloatLayout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\layout.py", line 76, in __init__
+    super(Layout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 366, in __init__
+    self.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 665, in _apply_rule
+    child.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 600, in _apply_rule
+    self._build_canvas(widget.canvas.before, widget,
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 933, in _build_canvas
+    raise BuilderException(
+kivy.lang.builder.BuilderException: Parser: File "<inline>", line 25:
+...
+     23:            blur_radius: root.elevation * 10
+     24:            border_radius:
+>>   25:                (root.radius if hasattr(self, "radius") else [0, 0, 0, 0])                 if root.shadow_radius == [0.0, 0.0, 0.0, 0.0] else                 root.shadow_radius
+     26:    canvas.after:
+     27:        PopMatrix
+...
+ValueError: 'border_radius' must have 4, got 0
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+
+2025-12-14 19:13:39 - Pipoo - CRITICAL - App initialization: 
+Traceback (most recent call last):
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+ValueError: 'border_radius' must have 4, got 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\pipoo\core\app.py", line 206, in _add_screens
+    SignupScreen(),
+    ^^^^^^^^^^^^^^
+  File "F:\pipoo\ui\screens\auth.py", line 65, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\relativelayout.py", line 274, in __init__
+    super(RelativeLayout, self).__init__(**kw)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\floatlayout.py", line 65, in __init__
+    super(FloatLayout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\layout.py", line 76, in __init__
+    super(Layout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 366, in __init__
+    self.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 667, in _apply_rule
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 665, in _apply_rule
+    child.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 600, in _apply_rule
+    self._build_canvas(widget.canvas.before, widget,
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 933, in _build_canvas
+    raise BuilderException(
+kivy.lang.builder.BuilderException: Parser: File "<inline>", line 25:
+...
+     23:            blur_radius: root.elevation * 10
+     24:            border_radius:
+>>   25:                (root.radius if hasattr(self, "radius") else [0, 0, 0, 0])                 if root.shadow_radius == [0.0, 0.0, 0.0, 0.0] else                 root.shadow_radius
+     26:    canvas.after:
+     27:        PopMatrix
+...
+ValueError: 'border_radius' must have 4, got 0
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 930, in _build_canvas
+    setattr(instr, key, value)
+  File "kivy\\graphics\\boxshadow.pyx", line 422, in kivy.graphics.boxshadow.BoxShadow.border_radius.__set__
+  File "kivy\\graphics\\boxshadow.pyx", line 332, in kivy.graphics.boxshadow.BoxShadow._check_iter
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\pipoo\core\app.py", line 107, in build
+    self._add_screens()
+  File "F:\pipoo\core\app.py", line 220, in _add_screens
+    self.error_handler.handle_error(e, "Adding screens", critical=True)
+  File "F:\pipoo\utils\error_handler.py", line 38, in handle_error
+    toast(user_msg)
+  File "F:\pipoo\venv\Lib\site-packages\kivymd\toast\kivytoast\kivytoast.py", line 154, in toast
+    Toast(duration=duration, _md_bg_color=background).toast(text)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\pipoo\venv\Lib\site-packages\kivymd\toast\kivytoast\kivytoast.py", line 84, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivymd\theming.py", line 1670, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivymd\uix\behaviors\motion_behavior.py", line 201, in __init__
+    super().__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\modalview.py", line 195, in __init__
+    super(ModalView, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\anchorlayout.py", line 68, in __init__
+    super(AnchorLayout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\layout.py", line 76, in __init__
+    super(Layout, self).__init__(**kwargs)
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 366, in __init__
+    self.apply_class_lang_rules(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\uix\widget.py", line 470, in apply_class_lang_rules
+    Builder.apply(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 545, in apply
+    self._apply_rule(
+  File "F:\pipoo\venv\Lib\site-packages\kivy\lang\builder.py", line 563, in _apply_rule
+    assert rule not in self.rulectx
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-12-14 19:15:11 - Pipoo - INFO - ==================================================
+2025-12-14 19:15:11 - Pipoo - INFO - Pipoo Application Starting...
+2025-12-14 19:15:11 - Pipoo - INFO - ==================================================
+2025-12-14 19:15:11 - Pipoo - INFO - Storage service initialized
+2025-12-14 19:15:11 - Pipoo - INFO - Auth service initialized
+2025-12-14 19:15:11 - Pipoo - INFO - State service initialized
+2025-12-14 19:15:11 - Pipoo - INFO - AI service initialized
+2025-12-14 19:15:11 - Pipoo - INFO - Voice service initialized (TTS: True, STT: True)
+2025-12-14 19:15:11 - Pipoo - INFO - Productivity service initialized
+2025-12-14 19:15:11 - Pipoo - INFO - Permissions handler initialized
+2025-12-14 19:15:11 - Pipoo - INFO - Services initialized in 0.47s
+2025-12-14 19:15:13 - Pipoo - INFO - Added 8 screens
+2025-12-14 19:15:13 - Pipoo - WARNING - Slow operation: app_startup took 1.84s
+2025-12-14 19:15:13 - Pipoo - INFO - App startup completed in 1.84s
+2025-12-14 19:15:13 - Pipoo - INFO - 🚀 Pipoo Application Started
+2025-12-14 19:15:13 - Pipoo - INFO - 📱 Current Screen: splash
+2025-12-14 19:15:13 - Pipoo - INFO - Memory: RSS=162.3MB, VMS=108.5MB
+2025-12-14 19:15:55 - Pipoo - INFO - Auth state updated: Noova
+2025-12-14 19:19:21 - Pipoo - INFO - ==================================================
+2025-12-14 19:19:21 - Pipoo - INFO - Pipoo Application Starting...
+2025-12-14 19:19:21 - Pipoo - INFO - ==================================================
+2025-12-14 19:19:21 - Pipoo - INFO - Storage service initialized
+2025-12-14 19:19:21 - Pipoo - INFO - Auth service initialized
+2025-12-14 19:19:21 - Pipoo - INFO - State service initialized
+2025-12-14 19:19:21 - Pipoo - INFO - AI service initialized
+2025-12-14 19:19:22 - Pipoo - INFO - Voice service initialized (TTS: True, STT: True)
+2025-12-14 19:19:22 - Pipoo - INFO - Productivity service initialized
+2025-12-14 19:19:22 - Pipoo - INFO - Permissions handler initialized
+2025-12-14 19:19:22 - Pipoo - INFO - Services initialized in 0.49s
+2025-12-14 19:19:23 - Pipoo - INFO - Added 8 screens
+2025-12-14 19:19:23 - Pipoo - WARNING - Slow operation: app_startup took 1.67s
+2025-12-14 19:19:23 - Pipoo - INFO - App startup completed in 1.67s
+2025-12-14 19:19:23 - Pipoo - INFO - 🚀 Pipoo Application Started
+2025-12-14 19:19:23 - Pipoo - INFO - 📱 Current Screen: splash
+2025-12-14 19:19:23 - Pipoo - INFO - Memory: RSS=162.3MB, VMS=108.5MB
+2025-12-14 19:19:35 - Pipoo - INFO - Auth state updated: Noova
+2025-12-14 19:21:53 - Pipoo - INFO - ==================================================
+2025-12-14 19:21:53 - Pipoo - INFO - Pipoo Application Starting...
+2025-12-14 19:21:53 - Pipoo - INFO - ==================================================
+2025-12-14 19:21:53 - Pipoo - INFO - Storage service initialized
+2025-12-14 19:21:53 - Pipoo - INFO - Auth service initialized
+2025-12-14 19:21:53 - Pipoo - INFO - State service initialized
+2025-12-14 19:21:53 - Pipoo - INFO - AI service initialized
+2025-12-14 19:21:53 - Pipoo - INFO - Voice service initialized (TTS: True, STT: True)
+2025-12-14 19:21:53 - Pipoo - INFO - Productivity service initialized
+2025-12-14 19:21:53 - Pipoo - INFO - Permissions handler initialized
+2025-12-14 19:21:53 - Pipoo - INFO - Services initialized in 0.48s
+2025-12-14 19:21:55 - Pipoo - INFO - Added 8 screens
+2025-12-14 19:21:55 - Pipoo - WARNING - Slow operation: app_startup took 1.78s
+2025-12-14 19:21:55 - Pipoo - INFO - App startup completed in 1.78s
+2025-12-14 19:21:55 - Pipoo - INFO - 🚀 Pipoo Application Started
+2025-12-14 19:21:55 - Pipoo - INFO - 📱 Current Screen: splash
+2025-12-14 19:21:55 - Pipoo - INFO - Memory: RSS=162.2MB, VMS=108.4MB
+2025-12-14 19:22:07 - Pipoo - INFO - Auth state updated: Noova
+2025-12-15 16:38:23 - Pipoo - INFO - ==================================================
+2025-12-15 16:38:23 - Pipoo - INFO - Pipoo Application Starting...
+2025-12-15 16:38:23 - Pipoo - INFO - ==================================================
+2025-12-15 16:38:23 - Pipoo - INFO - Storage service initialized
+2025-12-15 16:38:23 - Pipoo - INFO - Auth service initialized
+2025-12-15 16:38:23 - Pipoo - INFO - State service initialized
+2025-12-15 16:38:23 - Pipoo - INFO - AI service initialized
+2025-12-15 16:38:25 - Pipoo - INFO - Voice service initialized (TTS: True, STT: True)
+2025-12-15 16:38:25 - Pipoo - INFO - Productivity service initialized
+2025-12-15 16:38:25 - Pipoo - INFO - Permissions handler initialized
+2025-12-15 16:38:25 - Pipoo - WARNING - Slow operation: service_init took 1.67s
+2025-12-15 16:38:25 - Pipoo - INFO - Services initialized in 1.67s
+2025-12-15 16:38:26 - Pipoo - INFO - Added 8 screens
+2025-12-15 16:38:26 - Pipoo - WARNING - Slow operation: app_startup took 3.47s
+2025-12-15 16:38:26 - Pipoo - INFO - App startup completed in 3.47s
+2025-12-15 16:38:26 - Pipoo - INFO - 🚀 Pipoo Application Started
+2025-12-15 16:38:26 - Pipoo - INFO - 📱 Current Screen: splash
+2025-12-15 16:38:26 - Pipoo - INFO - Memory: RSS=161.4MB, VMS=108.3MB
+2025-12-15 16:39:12 - Pipoo - INFO - Auth state updated: Noovax
