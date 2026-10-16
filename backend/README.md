@@ -1,97 +1,58 @@
 # Clarity AI Backend
 
-Backend API for Clarity AI - Career clarity, skill proof, and focus platform.
+FastAPI backend for the Clarity AI career-clarity and focus platform. This service is under active development; not every planned workflow is complete yet.
 
-## 🚀 Quick Start
+## Stack
 
-### 1. Create Virtual Environment
-```bash
-python -m venv venv
-```
+- FastAPI + Uvicorn
+- MongoDB via Motor/PyMongo
+- Pydantic and python-dotenv for configuration
+- JWT-based authentication foundation
 
-### 2. Activate Virtual Environment
+## Run locally
 
-**Windows:**
-```bash
-venv\Scripts\activate
-```
+Requires Python 3.10+ and a MongoDB instance.
 
-**Mac/Linux:**
-```bash
-source venv/bin/activate
-```
+1. Create and activate a virtual environment:
 
-### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   python -m venv .venv
+   ```
 
-### 4. Create .env File
-Copy `.env.example` to `.env` or create a new `.env` file with required variables.
+   **Windows PowerShell:** `.\.venv\Scripts\Activate.ps1`  
+   **macOS/Linux:** `source .venv/bin/activate`
 
-### 5. Run Server
-```bash
-uvicorn app.main:app --reload
-```
+2. Install packages:
 
-Server will start at: `http://localhost:8000`
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 📚 API Documentation
+3. Copy `.env.example` to `.env` and set your MongoDB URL and a unique random JWT secret. For local development, the example values assume MongoDB is available on your machine.
 
-Once the server is running, access:
-- **Swagger UI:** http://localhost:8000/docs
-- **ReDoc:** http://localhost:8000/redoc
+4. Start the API from the `backend/` directory:
 
-## 📁 Project Structure
+   ```bash
+   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   ```
 
-```
-backend/
-├── app/
-│   ├── main.py              # FastAPI app entry point
-│   ├── core/
-│   │   └── config.py        # Configuration settings
-│   ├── routes/              # API endpoints (Step 2)
-│   ├── models/              # Database models (Step 3)
-│   └── services/            # Business logic (Step 4)
-├── .env                     # Environment variables
-├── requirements.txt         # Python dependencies
-└── README.md               # This file
-```
+## Useful endpoints
 
-## ✅ Health Check
+- Root/health status: [http://localhost:8000/health](http://localhost:8000/health)
+- Interactive API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+- ReDoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
 
-Test if server is running:
-```bash
-curl http://localhost:8000/health
-```
+## Configuration
 
-Expected response:
-```json
-{
-  "status": "healthy",
-  "service": "Clarity AI Backend",
-  "version": "1.0.0"
-}
-```
+See `.env.example` for the configuration keys read by the backend:
 
-## 🔧 Development
+- `MONGODB_URL` and `DATABASE_NAME` — database connection
+- `JWT_SECRET_KEY` — signing secret; replace the example with a strong, unique value
+- `FRONTEND_URL` — frontend URL
+- `DEBUG` — use `false` outside local development
 
-### Install New Package
-```bash
-pip install package-name
-pip freeze > requirements.txt
-```
+Do not commit your actual `.env` file or real credentials.
 
-### Run with Auto-reload
-```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
+## Development status
 
-## 📝 Current Phase: PHASE 2 - BACKEND FOUNDATION
-
-- [x] Step 1: Backend Setup (CURRENT)
-- [ ] Step 2: Authentication APIs
-- [ ] Step 3: Onboarding APIs
-- [ ] Step 4: Workspace Data APIs
-- [ ] Step 5: Database Connection
-- [ ] Step 6: Frontend-Backend Integration
+The application has route modules for authentication, onboarding, workspace, tasks, and history. Complete and test each workflow before treating the backend as production-ready.
