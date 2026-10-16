@@ -1,225 +1,114 @@
-# 🤖 Pipoo
+# Clarity AI — Career Clarity & Focus Platform
 
-> **Your Open-Source AI Desktop Productivity Assistant**
+Clarity AI is a work-in-progress platform exploring how people can get clearer about career direction, skills, and what to focus on next. The repository contains a Next.js frontend and a FastAPI backend foundation.
 
-Pipoo is an AI-powered desktop assistant designed to make everyday tasks faster and more enjoyable through voice interaction, intelligent conversations, and productivity tools. Instead of switching between multiple apps, Pipoo brings essential features into one modern desktop experience.
+> **Status:** Active development. The landing page and backend foundation are in place, but some API workflows, integrations, and deployment details are still being completed. This is not presented as a production-ready application.
 
-Whether you want to take notes, set reminders, ask AI questions, or interact using your voice, Pipoo aims to be your personal productivity companion.
+## What’s in the repository
 
----
+- **Frontend:** Landing page built with Next.js and React, with reusable sections for the problem, solution, workflow, audience, and calls to action.
+- **Backend:** FastAPI application with API routing for authentication, onboarding, workspace, tasks, and history.
+- **Persistence:** MongoDB integration using Motor/PyMongo.
+- **Security foundation:** JWT configuration and CORS middleware.
+- **API docs:** FastAPI Swagger UI and ReDoc.
 
-## ✨ Features
+## Tech stack
 
-* 🎙️ Voice Recognition
-* 🤖 AI-Powered Chat
-* 📝 Smart Notes
-* ⏰ Reminder Management
-* 📊 Productivity Dashboard
-* 🌙 Modern & Clean UI
-* ⚡ Fast Desktop Experience
-* 🔒 Local Preference Storage
-* 🔄 Extensible Architecture
+| Area | Technologies |
+|---|---|
+| Frontend | Next.js, React, Tailwind CSS |
+| Backend | Python, FastAPI, Uvicorn |
+| Database | MongoDB, Motor, PyMongo |
+| Authentication | JWT, Passlib/Bcrypt |
+| Validation & configuration | Pydantic, python-dotenv |
+| Containers | Docker Compose files are provided; see the setup notes below |
 
----
-
-## 🚀 Tech Stack
-
-### Frontend
-
-* Python
-* PyQt5 (or your chosen GUI framework)
-
-### AI
-
-* Google Gemini API
-
-### Voice
-
-* SpeechRecognition
-* pyttsx3
-* PyAudio
-
-### Database
-
-* SQLite
-
-### Utilities
-
-* Requests
-* python-dateutil
-
----
-
-## 📂 Project Structure
+## Project structure
 
 ```text
-Pipoo/
-│
-├── assets/
-├── components/
-├── database/
-├── models/
-├── services/
-├── ui/
-├── utils/
-├── main.py
-├── requirements.txt
+Pipoo-Clearity-AI/
+├── backend/
+│   ├── app/
+│   │   ├── core/       # Configuration and database connection
+│   │   └── routes/     # API routers
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   └── README.md
+├── frontend/
+│   ├── app/            # Next.js app routes and page components
+│   ├── components/
+│   ├── package.json
+│   └── Dockerfile
+├── docker-compose.yml
 └── README.md
 ```
 
----
+## Run locally
 
-## 📦 Installation
+### 1. Start the backend
 
-### Clone the repository
-
-```bash
-git clone https://github.com/<your-username>/pipoo.git
-```
-
-Move into the project directory
+You need Python 3.10+ and access to a MongoDB instance. From the repository root:
 
 ```bash
-cd pipoo
+cd backend
+python -m venv .venv
 ```
 
-Create a virtual environment
+Activate the environment:
 
+**Windows PowerShell**
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux**
 ```bash
-python -m venv venv
+source .venv/bin/activate
 ```
 
-Activate it
-
-### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-### Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
-Install dependencies
+Install dependencies and prepare the environment:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Create a `.env` file
-
-```env
-GEMINI_API_KEY=YOUR_API_KEY
-```
-
-Run the application
+Copy `.env.example` to `.env` and replace the placeholder values. Then run:
 
 ```bash
-python main.py
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
----
+Backend URLs:
+- Health check: [http://localhost:8000/health](http://localhost:8000/health)
+- API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+- ReDoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
 
-## 📸 Screenshots
+### 2. Start the frontend
 
-> Screenshots will be added soon.
+Open a second terminal from the repository root:
 
----
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-## 🛣️ Roadmap
+Open [http://localhost:3000](http://localhost:3000).
 
-* [ ] Cross-platform support
-* [ ] Plugin System
-* [ ] Calendar Integration
-* [ ] Email Assistant
-* [ ] Weather Module
-* [ ] Smart File Search
-* [ ] AI Memory
-* [ ] Multiple Themes
-* [ ] Offline Voice Commands
-* [ ] Mobile Companion App
+## Environment and security
 
----
+- Keep credentials in local `.env` files; do not commit them.
+- Use a unique, long random value for `JWT_SECRET_KEY`. Never use the placeholder from `.env.example` in a real deployment.
+- Set `DEBUG=false` outside local development.
+- For containers, configure `MONGODB_URL` to a MongoDB address reachable from the backend container. A host machine's `localhost` is not the same as the container's `localhost`.
 
-## 🤝 Contributing
+## Current next steps
 
-Contributions are always welcome!
+- Complete and verify the frontend-to-backend workflows.
+- Add automated tests for core API behavior.
+- Review authentication, CORS, and production configuration.
+- Verify the Docker setup in a clean environment before relying on it for deployment.
 
-If you'd like to improve Pipoo:
+## Author
 
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Push your branch.
-5. Open a Pull Request.
-
-You can also help by:
-
-* Reporting bugs
-* Suggesting new features
-* Improving documentation
-* Enhancing the UI/UX
-* Optimizing performance
-
----
-
-## 🐞 Found a Bug?
-
-Please create an Issue describing:
-
-* Expected behavior
-* Actual behavior
-* Steps to reproduce
-* Operating System
-* Python Version
-
----
-
-## 💡 Feature Requests
-
-Have an idea?
-
-Open an Issue and describe:
-
-* The problem
-* Your proposed solution
-* Why it would improve Pipoo
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 🌟 Support the Project
-
-If you find Pipoo useful:
-
-⭐ Star the repository
-
-🍴 Fork the project
-
-🐛 Report bugs
-
-💡 Suggest features
-
-🤝 Contribute to the codebase
-
----
-
-## 👩‍💻 Author
-
-**Nova**
-
-BCA Student • Full Stack Developer • AI Enthusiast
-
-Building practical AI-powered applications and sharing the journey through open source.
-
----
-
-> **Pipoo isn't just an AI assistant—it's an open-source productivity companion built to help developers, students, and creators work smarter every day.**
+**Beauty Mauryaa (Nova)** · [GitHub](https://github.com/BeautyMauryaa)
