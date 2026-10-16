@@ -1,34 +1,32 @@
-version: "3.9"
-
 services:
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: pipoo-backend
+    container_name: clarity-ai-backend
     ports:
       - "8000:8000"
     env_file:
-      - ./backend/.env      # MONGODB_URI, JWT_SECRET, etc. come from here (Atlas connection string included)
+      - ./backend/.env # Copy backend/.env.example to backend/.env first
     restart: unless-stopped
     networks:
-      - pipoo-net
+      - clarity-ai-net
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: pipoo-frontend
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    container_name: clarity-ai-frontend
     ports:
       - "3000:3000"
-    environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8000
     depends_on:
       - backend
     restart: unless-stopped
     networks:
-      - pipoo-net
+      - clarity-ai-net
 
 networks:
-  pipoo-net:
+  clarity-ai-net:
     driver: bridge
