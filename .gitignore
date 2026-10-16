@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+**/node_modules/
+.next/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Build output and logs
+dist/
+build/
+coverage/
+*.log
+.DS_Store
