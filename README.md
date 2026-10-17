@@ -154,12 +154,17 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 **Beauty Mauryaa (Nova)** · [GitHub](https://github.com/BeautyMauryaa)
 
-## Ideas & Collaboration
+## Learn, Build & Grow Together
 
-Pipoo Clearity AI is an open-source project, and I'd love to see it grow with ideas and contributions from others.
+This is an open-source project, and I'd love for students and fellow developers to learn and build together.
 
-Have an idea that could make the project more useful? Want to improve a feature, report a bug, or build something together? You're welcome to reach out.
+If you have an idea, spot a bug, want to improve a feature, or simply want to learn by contributing, you're welcome here. We can explore ideas, debug issues, share what we learn, and make the project better step by step.
+
+- **Have an idea?** Open an issue and let's discuss it.
+- **Found a bug?** Share the steps to reproduce it so we can investigate.
+- **Want to contribute?** Check the code, suggest an improvement, or open a pull request.
+- **Want to learn together?** Reach out and let's build, learn, and grow together.
 
 **Email:** Add your preferred public contact email here.
 
-You can also open a [GitHub issue](https://github.com/BeautyMauryaa/Pipoo-Clearity-AI/issues) to suggest a feature or report a bug. If you're interested in collaborating directly, send me an email with your idea and how you'd like to contribute. I'd love to hear from you.
+No one has to know everything before contributing. Curiosity, respectful collaboration, and a willingness to learn are enough to get started.
