@@ -1,62 +1,87 @@
 # Pipoo Clearity AI ✨
 
-**A little space to figure things out, stay focused, and take the next step.**
+A career clarity and focus platform I'm building to help turn goals into clearer next steps.
 
-Pipoo Clearity AI is an open-source career clarity and focus platform I'm building with the idea of making goals and next steps feel a bit less overwhelming.
+## 🤝 Want to build this together?
 
-## 🤝 Got an idea? Let's build it together.
+This is an open-source project, and I'd genuinely love for it to grow with ideas from other students and developers.
 
-This project is open source, so if you're a student or developer who wants to learn by building, you're in the right place.
+Have an idea that could make the project more useful? Want to try a feature, improve the UI, debug something, learn a new stack, or just build alongside someone who's also learning? **You're welcome here.** You don't need to be an expert or have a perfect first contribution. We can learn, experiment, review each other's work, fix bugs, and improve the project together.
 
-Got a feature idea? Found a weird bug? Want to try something, fix something, or just figure it out together? Jump in. We can share ideas, debug things, improve the project, and learn as we go.
+📩 **Email me:** [beautymaurya9142@gmail.com](mailto:beautymaurya9142@gmail.com)
 
-- 💡 **Got an idea?** [Open an issue](https://github.com/BeautyMauryaa/Pipoo-Clearity-AI/issues) and tell me about it.
-- 🐛 **Found a bug?** Share what happened and how to reproduce it.
-- 🛠️ **Want to contribute?** Explore the code and open a pull request.
-- 🌱 **Still learning?** Same energy. You don't need to know everything to get started.
+A quick note about your idea or the part you'd like to work on is enough. You can also open a GitHub issue to suggest a feature or report a bug.
 
-No gatekeeping, no need to be an expert. Let's learn, build, debug, and grow together.
+## 💡 What is Pipoo Clearity AI?
 
-**Want to reach me?** Add your public email here: `beautymaurya9142@gmail.com`
+Career planning can get messy: you have goals, skills you want to learn, tasks to finish, and lots of possible next steps. This project explores bringing that work into one place, so users can organize their direction and turn broad goals into manageable actions.
 
-## 💭 What is it?
+The current codebase has a **Next.js web frontend** and a **FastAPI backend** with MongoDB integration. It's still a work in progress, so some areas may be incomplete or need more testing. I'm building and improving it step by step, and that's part of the reason I'm opening it up to collaboration.
 
-The goal is to bring career planning and focused action into one place—so it's easier to make sense of where you're going and what you can do next.
+> **Important:** This repository is the career clarity web platform. It is separate from any other project that shares the name “Pipoo Clearity AI,” including a Python desktop assistant. The projects are unrelated and their code and features are not shared.
 
-The codebase is a work in progress. It includes foundations for onboarding, workspaces, tasks, and activity history; some flows may still need wiring, testing, or improvement.
+## 🧭 Current direction
 
-> Heads-up: this repo is the **career clarity web platform**. It's a separate project from the Python desktop voice assistant, even though the names are similar.
+The repository includes foundations for these areas:
 
-## 🧰 The stack
+- **Career onboarding** — gather a user's goals and context.
+- **Workspaces** — keep planning and related work organized.
+- **Tasks and next steps** — break plans into smaller actions.
+- **Activity history** — revisit relevant previous activity.
+- **Authentication** — backend foundations for protected user access.
 
-- **Frontend:** Next.js, React, Tailwind CSS
-- **Backend:** Python, FastAPI, Uvicorn
-- **Database:** MongoDB, Motor, PyMongo
-- **Auth & validation:** JWT, Passlib/Bcrypt, Pydantic
-- **Dev setup:** Docker, Docker Compose
+These describe the project's current direction and codebase, not a promise that every flow is already complete. If you spot something unfinished or inconsistent, feedback and fixes are very welcome.
 
-## 📁 Project layout
+## 🛠️ Tech stack
+
+| Area | Technologies |
+| --- | --- |
+| Frontend | Next.js, React, Tailwind CSS |
+| Backend API | Python, FastAPI, Uvicorn |
+| Database | MongoDB, Motor, PyMongo |
+| Authentication and security foundations | JWT, Passlib, Bcrypt |
+| Validation and configuration | Pydantic, python-dotenv |
+| Local development | Docker, Docker Compose |
+
+## 📁 Project structure
 
 ```text
 Pipoo-Clearity-AI/
-├── frontend/       # Next.js app
-├── backend/        # FastAPI app, routes, models and services
+├── frontend/                 # Next.js web application
+├── backend/
+│   ├── app/
+│   │   ├── core/             # Configuration, security, database setup
+│   │   ├── models/            # Data models
+│   │   ├── routes/            # API endpoints
+│   │   └── services/          # Application/business logic
+│   ├── tests/                 # Backend tests
+│   ├── requirements.txt
+│   └── Dockerfile
 ├── docker-compose.yml
+├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
 ## 🚀 Run it locally
 
-You'll need **Python 3.10+**, **Node.js/npm**, and access to MongoDB.
+You'll need Python 3.10+, Node.js with npm, and access to a MongoDB instance. Docker Desktop is optional if you want to use Docker Compose.
 
-### 1. Backend
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/BeautyMauryaa/Pipoo-Clearity-AI.git
+cd Pipoo-Clearity-AI
+```
+
+### 2. Start the backend
 
 ```bash
 cd backend
 python -m venv .venv
 ```
 
-Activate the virtual environment:
+Activate the virtual environment.
 
 **Windows PowerShell**
 ```powershell
@@ -74,7 +99,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Set up your environment variables using the example file if provided. Add your MongoDB URL and a strong JWT secret. Keep real secrets out of Git.
+Create your local environment file using the variables expected by the backend configuration. Set your MongoDB connection string and a strong JWT secret. Never commit real credentials or your `.env` file.
 
 Start the API from the `backend/` directory:
 
@@ -82,9 +107,9 @@ Start the API from the `backend/` directory:
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-If the app's health route is configured, check [localhost:8000/health](http://localhost:8000/health). API docs are usually available at [localhost:8000/docs](http://localhost:8000/docs).
+If the application starts successfully, try the API docs at [http://localhost:8000/docs](http://localhost:8000/docs). The health endpoint is available at [http://localhost:8000/health](http://localhost:8000/health) if it is enabled in your current checkout.
 
-### 2. Frontend
+### 3. Start the frontend
 
 Open another terminal:
 
@@ -94,26 +119,52 @@ npm install
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). Make sure the frontend API URL points to your local backend.
+Open [http://localhost:3000](http://localhost:3000).
 
-### 3. Docker
+If the frontend needs an API base URL, configure the environment variable used by the current frontend code and point it to your local backend. Check the project's existing configuration before adding a new variable.
 
-There's a Docker Compose setup to explore, too. Check the environment variables and service settings before running it, and don't use development secrets in production.
+### 4. Using Docker Compose
 
-## 🌱 What needs love next?
+A `docker-compose.yml` file is included for local development. Review the services and environment variables in that file before running it. Make sure database URLs, ports, and credentials match your local setup; `localhost` inside a container refers to that container, not automatically to your host machine.
 
-- Test the main user flows from frontend to backend
-- Add and improve tests
-- Check authentication and user-data access carefully
-- Make local setup smoother for new contributors
-- Keep improving the experience based on real feedback
+## 🌱 Ways to contribute
 
-If you work on something, please mention what you changed and how you tested it. Small, clear contributions are very welcome.
+You can contribute in a way that matches your interests and experience:
+
+- Share a practical feature idea or a better user flow.
+- Improve layout, accessibility, responsive behavior, or UI consistency.
+- Help connect frontend screens to backend APIs.
+- Add or improve validation, error handling, and loading states.
+- Write tests, reproduce bugs, and help debug issues.
+- Improve setup instructions or add useful documentation.
+- Review a pull request and share constructive feedback.
+
+### First contribution? Start here
+
+1. Explore the repository and run the part you're interested in.
+2. Check the open issues, or open one to discuss your idea before starting a larger change.
+3. Fork the repository and create a branch for your change.
+4. Keep the change focused and explain what it improves.
+5. Test what you changed and open a pull request with a short summary and testing notes.
+
+No pressure to know everything already. Asking questions and learning as you go are part of the process.
+
+## 🔐 A few security basics
+
+- Keep API keys, passwords, database credentials, and tokens out of commits.
+- Use a strong, private JWT secret in your own environment.
+- Review authentication, authorization, and user-data access before deploying publicly.
+- Use trusted CORS origins for anything beyond local development.
+- Please report security concerns privately instead of posting exploitable details in a public issue.
+
+## 🗺️ What's next?
+
+Some useful areas to keep improving are end-to-end testing, reliable frontend/backend integration, authorization checks, clear error states, and a smoother setup experience. If you have a different idea that fits the project's purpose, I'd love to hear it—open source is better when people can bring different perspectives.
 
 ## 📄 License
 
-This project is shared under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is available under the MIT License. See [LICENSE](LICENSE) for the full text.
 
 ---
 
-Built by [Beauty Mauryaa](https://github.com/BeautyMauryaa), with room for others to jump in.
+Built in public by [Beauty Mauryaa](https://github.com/BeautyMauryaa). Learning as I go, and happy to build with others. 🌱
