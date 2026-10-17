@@ -17,7 +17,7 @@ Got a feature idea? Found a weird bug? Want to try something, fix something, or 
 
 No gatekeeping, no need to be an expert. Let's learn, build, debug, and grow together.
 
-**Want to reach me?** Add your public email here: `your-email@example.com`
+**Want to reach me?** Add your public email here: `beautymaurya9142@gmail.com`
 
 ## 💭 What is it?
 
