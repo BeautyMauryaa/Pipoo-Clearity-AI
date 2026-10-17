@@ -1,71 +1,48 @@
 # app/core/config.py
-import os
-
 from dotenv import load_dotenv
+import os
 
 # Load environment variables from .env file
 load_dotenv()
 
-
-def _required_jwt_secret() -> str:
-    """Require a private JWT signing secret instead of silently using a public default."""
-    secret = os.getenv("JWT_SECRET_KEY", "").strip()
-    placeholder_values = {
-        "",
-        "your-secret-key-change-in-production",
-        "replace-with-a-long-random-secret",
-        "changeme",
-        "change-me",
-    }
-    if secret.lower() in placeholder_values or len(secret) < 32:
-        raise RuntimeError(
-            "JWT_SECRET_KEY must be set to a private random value of at least 32 characters. "
-            "Generate one with: python -c \"import secrets; print(secrets.token_urlsafe(48))\""
-        )
-    return secret
-
-
 class Settings:
-    """Application settings and configuration."""
-
-    # Project info
+    """
+    Application settings and configuration
+    """
+    # Project Info
     PROJECT_NAME: str = "Clarity AI Backend"
     VERSION: str = "1.0.0"
     DESCRIPTION: str = "Backend API for Clarity AI - Career clarity, skill proof, and focus platform"
-
-    # Server config
+    
+    # Server Config
     HOST: str = "0.0.0.0"
     PORT: int = 8000
-
-    # CORS settings
-    FRONTEND_URL: str = os.getenv("FRONTEND_URL", "http://localhost:3000").strip().rstrip("/")
-    ALLOWED_ORIGINS: list = list(
-        dict.fromkeys(
-            [
-                "http://localhost:3000",
-                "http://127.0.0.1:3000",
-                FRONTEND_URL,
-            ]
-        )
-    )
-
-    # API settings
+    
+    # CORS Settings (for frontend connection)
+    FRONTEND_URL: str = os.getenv("FRONTEND_URL", "http://localhost:3000")
+    ALLOWED_ORIGINS: list = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ]
+    
+    # API Settings
     API_PREFIX: str = "/api"
-
-    # JWT settings
-    JWT_SECRET_KEY: str = _required_jwt_secret()
+    
+    # JWT Settings
+    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "your-secret-key-change-in-production")
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRATION_MINUTES: int = 1440  # 24 hours
-
-    # Database settings
+    
+    # Database Settings
     MONGODB_URL: str = os.getenv("MONGODB_URL", "mongodb://localhost:27017")
     DATABASE_NAME: str = os.getenv("DATABASE_NAME", "clarity_ai")
+    
+    # Debug Mode
+    DEBUG: bool = os.getenv("DEBUG", "True").lower() == "true"
 
-    # Debug mode must be explicitly enabled for local development
-    DEBUG: bool = os.getenv("DEBUG", "false").lower() == "true"
-
-
+# Create settings instance
 settings = Settings()
 
+# Print confirmation on load
 if settings.DEBUG:
-    print(f"Config loaded - {settings.PROJECT_NAME} v{settings.VERSION}")
+    print(f"✅ Config loaded - {settings.PROJECT_NAME} v{settings.VERSION}")
