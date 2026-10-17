@@ -1,35 +1,35 @@
 ---
-name: Bug report
-about: Report something that is not working as expected
+name: "🐛 Something's broken"
+about: "Found a bug? Let's figure it out together."
 title: "[Bug]: "
 labels: bug
 assignees: ""
 ---
 
-## What happened?
+## What went wrong?
 
-Describe the issue in a few sentences.
+Tell us what happened in your own words. No need to make it sound fancy.
 
 ## What did you expect to happen?
 
-Tell us what you expected instead.
+What were you trying to do, and what should have happened instead?
 
-## Steps to reproduce
+## How can we reproduce it?
 
-1. Go to '...'
-2. Click or enter '...'
-3. See the problem
+1. Go to ...
+2. Click or enter ...
+3. Notice what happens ...
 
-## Environment
+## Where did it happen?
 
-- Area: [Frontend / Backend / Docker / Documentation / Other]
-- Browser or operating system (if relevant):
-- Branch or commit (if known):
+- **Area:** Frontend / Backend / Docker / Docs / Not sure
+- **Browser or OS (if relevant):**
+- **Anything else that might help:**
 
-## Logs or screenshots
+## Error message or screenshot (optional)
 
-Add a relevant error message or screenshot if you can. Please remove secrets, tokens, and personal information before sharing.
+Paste an error or add a screenshot if you have one. Please remove passwords, tokens, API keys, and personal information first.
 
 ## Anything else?
 
-Add any context that might help reproduce or understand the issue.
+Even a small clue can help us debug this together.
