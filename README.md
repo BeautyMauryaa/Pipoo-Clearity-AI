@@ -1,6 +1,6 @@
-# Clarity AI — Career Clarity & Focus Platform
+# Pipoo-Clearity-AI — Career Clarity & Focus Platform
 
-Clarity AI is a work-in-progress platform for helping people organize their career direction, skills, and next steps. It brings together a Next.js frontend and a FastAPI backend foundation.
+Pipoo-Clearity-AI is a work-in-progress platform for helping people organize their career direction, skills, and next steps. It brings together a Next.js frontend and a FastAPI backend foundation.
 
 > **Status:** In active development. The codebase includes the frontend, API routes, authentication foundations, workspace/task flows, and MongoDB integration. End-to-end workflows and production readiness still need to be verified; this project is not presented as production-ready.
 
@@ -28,7 +28,7 @@ These describe the project's intended workflows. Check the implementation and cu
 ## Repository structure
 
 ```text
-Clarity-AI/
+Pipoo-Clearity-AI/
 ├── frontend/          # Next.js application
 ├── backend/
 │   ├── app/
