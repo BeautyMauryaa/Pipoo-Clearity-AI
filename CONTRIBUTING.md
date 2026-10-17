@@ -14,7 +14,7 @@ You don't need to be an expert to contribute. If you're a student, a beginner, o
 - Check the open issues to see what people are already discussing.
 - Got a bigger idea? Open an issue first so we can talk it through before anyone spends time building it.
 - Small typo or documentation fix? Feel free to jump in.
-- One important note: this repo is the **career clarity web platform**. It's separate from the Python desktop voice assistant that also uses the Pipoo name.
+- One important note: this repo is the **career clarity web platform**. 
 
 ## What can you help with?
 
