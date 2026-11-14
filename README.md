@@ -10,6 +10,7 @@ Have an idea that could make the project more useful? Want to try a feature, imp
 
 📩 **Email me:** [beautymaurya9142@gmail.com](mailto:beautymaurya9142@gmail.com)
 
+
 A quick note about your idea or the part you'd like to work on is enough. You can also open a GitHub issue to suggest a feature or report a bug.
 
 ## 💡 What is Pipoo Clearity AI?
