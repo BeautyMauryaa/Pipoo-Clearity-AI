@@ -2,6 +2,7 @@
 
 A career clarity and focus platform I'm building to help turn goals into clearer next steps.
 
+
 ## 🤝 Want to build this together?
 
 This is an open-source project, and I'd genuinely love for it to grow with ideas from other students and developers.
