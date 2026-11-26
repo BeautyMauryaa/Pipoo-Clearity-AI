@@ -4,6 +4,7 @@ Welcome to Pipoo Clearity AI!
 
 This project is still growing, and the idea is simple: make a space that helps people get more clarity around their career and focus. It is not a finished, perfect product—and that's exactly why having more people involved can make it better.
 
+
 You don't need to be an expert to contribute. If you're a student, a beginner, or just someone who likes building things, you're welcome here. You can share an idea, spot a bug, improve the UI, test a flow, fix a typo, or learn by working on something with others.
 
 **Think of this as something we're building together, not a project you need permission to care about.** 💛
