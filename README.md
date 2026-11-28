@@ -8,7 +8,7 @@ A career clarity and focus platform I'm building to help turn goals into clearer
 This is an open-source project, and I'd genuinely love for it to grow with ideas from other students and developers.
 
 Have an idea that could make the project more useful? Want to try a feature, improve the UI, debug something, learn a new stack, or just build alongside someone who's also learning? **You're welcome here.** You don't need to be an expert or have a perfect first contribution. We can learn, experiment, review each other's work, fix bugs, and improve the project together.
-
+ 
 📩 **Email me:** [beautymaurya9142@gmail.com](mailto:beautymaurya9142@gmail.com)
 
 
